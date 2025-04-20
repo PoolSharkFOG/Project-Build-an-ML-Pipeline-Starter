@@ -32,13 +32,15 @@ def go(config: DictConfig):
     steps_par = config['main']['steps']
     active_steps = steps_par.split(",") if steps_par != "all" else _steps
 
+    root_path = hydra.utils.get_original_cwd()
+
     # Move to a temporary directory
     with tempfile.TemporaryDirectory() as tmp_dir:
 
         if "download" in active_steps:
             # Download file and load in W&B
             _ = mlflow.run(
-                f"{config['main']['components_repository']}/get_data",
+                f"{config['main']['components_repository']}/download",
                 "main",
                 version='main',
                 env_manager="conda",
@@ -52,9 +54,8 @@ def go(config: DictConfig):
 
         if "basic_cleaning" in active_steps:
             _ = mlflow.run(
-                f"{config['main']['components_repository']}/basic_cleaning",
+                os.path.join(root_path, "src/basic_cleaning"),  # Use the local path
                 "main",
-                version='main',
                 env_manager="conda",
                 parameters={
                     "input_artifact": "sample.csv:latest",
