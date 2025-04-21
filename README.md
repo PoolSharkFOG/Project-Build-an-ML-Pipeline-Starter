@@ -11,12 +11,7 @@ In this project you will build such a pipeline.
 
 This is the github repository: https://github.com/PoolSharkFOG/Project-Build-an-ML-Pipeline-Starter
 
-Weights & Balances will not let me make my project public without a subscription, but the project link is: https://wandb.ai/marksettergren-western-governors-university/nyc_airbnb
-
-I did find the folowing article on Udacity discussing the same issue and they instructed to create a report from the project:
-https://knowledge.udacity.com/questions/1063051
-
-So I created a report and have it saved here: https://github.com/PoolSharkFOG/Project-Build-an-ML-Pipeline-Starter/blob/main/NYC_airbnb_wandb_report.pdf
+Weights & Balances project link: https://wandb.ai/marksettergren-western-governors-university/nyc_airbnb
 
 
 ## Table of contents
